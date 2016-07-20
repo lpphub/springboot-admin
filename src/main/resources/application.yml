@@ -1,0 +1,26 @@
+info:
+  version: @pom.version@
+  stage: test
+
+logging:
+  file: target/boot-admin-sample.log
+
+spring:
+  application:
+    name: @pom.artifactId@
+#  boot:
+#    admin:
+#      url: http://localhost:8080
+  cloud:
+    config:
+      enabled: false
+
+endpoints:
+  health:
+    sensitive: false
+
+# 此处通过eureka服务来发现服务
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
